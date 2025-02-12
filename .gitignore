@@ -3,3 +3,4 @@ generated_docs/
 venv/
 temp_images/
 app.log
+__pycache__/

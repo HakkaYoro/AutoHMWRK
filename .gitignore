@@ -6,5 +6,5 @@ app.log
 
 # Ignorar todas las carpetas __pycache__
 **/__pycache__/
-
+__pycache__/
 # Otras reglas de .gitignore

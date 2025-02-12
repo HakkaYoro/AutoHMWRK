@@ -1,4 +1,4 @@
-# Task Generator
+# AutoHMWRK
 
 ## Description
 
@@ -9,7 +9,7 @@ This application automates task generation using a graphical user interface (GUI
 1.  Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/HakkaYoro/AutoHMWRK.git
     ```
 2.  Install the required dependencies:
 
@@ -23,6 +23,9 @@ This application automates task generation using a graphical user interface (GUI
 
         ```
         OPENROUTER_API_KEY=your_openrouter_api_key
+        OPENROUTER_MODEL=your/llm
+        GOOGLE_GEMINI_API_KEY=your_google_gemini_api_key
+        GOOGLE_GEMINI_MODEL=llm-name
         ```
 
 ## Usage

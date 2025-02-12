@@ -8,6 +8,7 @@ from utils.validators import validate_ci, validate_section
 from utils.image_scraper import download_images
 import subprocess
 from config.styles import font_settings
+from utils import build_student_data  # Ahora se importa correctamente desde utils/__init__.py
 
 def handle_generate_event(window, values):
     """Handles the task generation event"""
@@ -69,10 +70,19 @@ def handle_generate_event(window, values):
                 logging.error(f"Error al compilar LaTeX: {stderr.decode('utf-8')}")
                 raise Exception(f"Error al compilar LaTeX: {stderr.decode('utf-8')}")
 
+            # Renombrar el PDF según la estructura solicitada:
+            # (Nombre del Estudiante) - V(Número de cédula) - (Materia) - (Sección) - Ev. (Número de Evaluación) Corte (Número de corte) - UAH.pdf
             pdf_path = os.path.splitext(filepath)[0] + ".pdf"
-            logging.info("PDF compilado exitosamente.")
-
-            sg.popup_ok(f"Tarea generada exitosamente!\nPDF: {pdf_path}",
+            student_data = build_student_data(values)
+            new_pdf_name = (
+                f"{student_data['nombre']} - V{student_data['ci']} - "
+                f"{student_data['materia']} - {student_data['seccion']} - "
+                f"Ev. {student_data['eval_num']} Corte {student_data['corte']} - UAH.pdf"
+            )
+            new_pdf_path = os.path.join(os.path.dirname(filepath), new_pdf_name)
+            os.rename(pdf_path, new_pdf_path)
+            logging.info("PDF compilado y renombrado exitosamente.")
+            sg.popup_ok(f"Tarea generada exitosamente!\nPDF: {new_pdf_path}",
                        font=font_settings)
         except Exception as e:
             logging.error(f"Error al compilar LaTeX: {str(e)}")

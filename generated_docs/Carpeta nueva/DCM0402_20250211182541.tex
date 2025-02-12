@@ -1,0 +1,104 @@
+
+\documentclass[12pt, spanish]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+\begin{document}
+
+\begin{tabular}{ll}
+Nombre: & Gabriel Méndez \\
+C.I.: & V-30.464.232 \\
+Materia: & Análisis de Sistemas \\
+Sección: & DCM0402 \\
+Universidad: & UniversidadAlejandroDeHumboldt \\
+Carrera: & IngenieriaInformatica \\
+Evaluación: & Evaluación N\textdegree1 – Corte 1 \\
+Fecha: & 11/02/2025
+\end{tabular}
+
+\vspace{2cm}
+\begin{center}
+\Large \textbf{{Materia: Análisis de Sistemas}}
+\end{center}
+
+\section*{Introducción}
+
+El desarrollo de software moderno se enfrenta a la complejidad de proyectos cada vez más demandantes y cambiantes.  Mientras que las metodologías tradicionales, como el modelo en cascada y el modelo en V, ofrecen una estructura robusta y bien definida, su rigidez puede ser un obstáculo en entornos dinámicos. Por otro lado, las metodologías ágiles, como Scrum y Extreme Programming (XP), priorizan la flexibilidad y la adaptación, pero pueden carecer de la documentación y la planificación exhaustiva que requieren algunos proyectos. Este documento propone un modelo híbrido de desarrollo de software que combina lo mejor de ambos mundos, buscando un equilibrio entre la estructura y la adaptabilidad.
+
+\section*{Desarrollo: Modelo Híbrido Ágil-Tradicional}
+
+Nuestro modelo híbrido se denomina "AgileFall" y divide el ciclo de vida del proyecto en tres fases principales:
+
+\begin{enumerate}
+    \item \textbf{Fase de Inicio y Planificación (Enfoque Tradicional):} Esta fase inicial se basa en metodologías tradicionales, específicamente un enfoque adaptado del modelo en cascada.
+    \begin{itemize}
+        \item \textit{Recolección de Requisitos detallada:} Se realiza una exhaustiva recolección y documentación de los requisitos del cliente. Se utiliza técnicas de entrevistas, workshops y análisis de documentos. Se documentan los requisitos funcionales, no funcionales y las restricciones del proyecto.
+        \item \textit{Análisis y Diseño de Alto Nivel:} Se elabora un diseño arquitectónico de alto nivel, definiendo los componentes principales del sistema, las interfaces y las tecnologías a utilizar.
+        \item \textit{Planificación del Proyecto:} Se crea un plan detallado del proyecto, definiendo el alcance, el cronograma, el presupuesto y los recursos necesarios. Se identifican los riesgos y se elaboran planes de mitigación.
+        \item \textit{Aprobación Formal:} Al finalizar esta fase, se requiere una aprobación formal por parte del cliente y el equipo de desarrollo antes de pasar a la siguiente fase.
+    \end{itemize}
+
+    \item \textbf{Fase de Desarrollo Iterativo (Enfoque Ágil):}  Esta fase central se basa en metodologías ágiles, utilizando principalmente Scrum con elementos de XP.
+    \begin{itemize}
+        \item \textit{Sprints:} El desarrollo se realiza en sprints cortos (2-4 semanas) con objetivos claros y definidos.
+        \item \textit{Scrum Meetings:} Se realizan reuniones diarias de Scrum para coordinar el trabajo del equipo y resolver problemas.
+        \item \textit{Refinamiento del Backlog:} Se refina continuamente el backlog del producto, priorizando las funcionalidades y estimando el esfuerzo requerido.
+        \item \textit{Desarrollo Impulsado por Pruebas (TDD):} Se aplica TDD para asegurar la calidad del código y la cobertura de pruebas.
+        \item \textit{Integración Continua:} Se utiliza integración continua para detectar errores temprano y asegurar la estabilidad del sistema.
+        \item \textit{Revisiones y Retrospectivas:} Al final de cada sprint, se realiza una revisión para mostrar el trabajo realizado al cliente y una retrospectiva para identificar áreas de mejora.
+    \end{itemize}
+
+    \item \textbf{Fase de Despliegue y Mantenimiento (Enfoque Tradicional):} Esta fase final se enfoca en la puesta en producción del sistema y su mantenimiento a largo plazo.
+    \begin{itemize}
+        \item \textit{Pruebas de Aceptación del Usuario (UAT):} El cliente realiza pruebas exhaustivas para verificar que el sistema cumple con sus requisitos.
+        \item \textit{Despliegue en Producción:} Se despliega el sistema en el entorno de producción.
+        \item \textit{Documentación Final:} Se completa la documentación del sistema, incluyendo manuales de usuario y guías de administración.
+        \item \textit{Mantenimiento y Soporte:} Se proporciona mantenimiento y soporte continuo al cliente.
+    \end{itemize}
+\end{enumerate}
+
+Este modelo permite aprovechar la planificación inicial detallada y la gestión de riesgos de las metodologías tradicionales, mientras que la flexibilidad y la adaptabilidad de las metodologías ágiles se aplican al desarrollo iterativo, permitiendo reaccionar rápidamente a los cambios y entregar valor al cliente de forma continua.  La fase final tradicional asegura una transición ordenada a la producción y un soporte adecuado.
+
+\section*{Ventajas del Modelo AgileFall}
+
+\begin{itemize}
+    \item \textbf{Reducción de riesgos:} La planificación inicial exhaustiva ayuda a identificar y mitigar los riesgos del proyecto.
+    \item \textbf{Mayor flexibilidad:} La fase de desarrollo iterativo permite adaptarse a los cambios en los requisitos del cliente.
+    \item \textbf{Entrega continua de valor:} El cliente recibe funcionalidades útiles en cada sprint.
+    \item \textbf{Mayor calidad del software:} El uso de TDD e integración continua asegura la calidad del código.
+    \item \textbf{Mejor comunicación y colaboración:} Las reuniones diarias de Scrum fomentan la comunicación y la colaboración entre el equipo.
+    \item \textbf{Adecuado para proyectos complejos:} La estructura proporciona la guía necesaria para proyectos de gran envergadura.
+\end{itemize}
+
+\section*{Desafíos del Modelo AgileFall}
+
+\begin{itemize}
+    \item \textbf{Resistencia al cambio:}  El equipo puede resistirse a la combinación de metodologías diferentes.
+    \item \textbf{Sobrecarga de trabajo:} La necesidad de documentación exhaustiva y reuniones frecuentes puede generar una sobrecarga de trabajo.
+    \item \textbf{Complejidad en la gestión:} La gestión de un proyecto híbrido requiere habilidades y experiencia específicas.
+    \item \textbf{Dificultad en la estimación:} La estimación de tiempo y costos puede ser difícil debido a la combinación de enfoques.
+    \item \textbf{Necesidad de un equipo multidisciplinario:} El equipo debe contar con miembros con experiencia tanto en metodologías ágiles como tradicionales.
+    \item \textbf{Comunicación efectiva crucial:} La comunicación entre los diferentes roles (Product Owner, Scrum Master, equipo de desarrollo, cliente) debe ser clara y constante para evitar malentendidos.
+\end{itemize}
+
+\section*{Ejemplo Práctico}
+
+Consideremos el desarrollo de una plataforma de comercio electrónico. En la fase de inicio, se definirían los requisitos detallados de la plataforma (ej., funcionalidades de búsqueda, carrito de compras, gestión de pagos, etc.), el diseño de la arquitectura y la planificación del proyecto.  En la fase de desarrollo iterativo, se implementarían las funcionalidades en sprints, comenzando por las más prioritarias (ej., registro de usuarios, búsqueda de productos).  En cada sprint, se mostraría el trabajo realizado al cliente y se recibiría feedback para realizar ajustes.  Finalmente, en la fase de despliegue y mantenimiento, se realizarían las pruebas de aceptación, el despliegue en producción y la documentación final.
+
+\section*{Conclusión}
+
+El modelo AgileFall ofrece una alternativa viable para el desarrollo de software en entornos complejos y cambiantes. Al combinar lo mejor de las metodologías ágiles y tradicionales, se busca un equilibrio entre la estructura, la flexibilidad y la entrega continua de valor. Si bien presenta desafíos, sus ventajas potenciales lo convierten en una opción atractiva para proyectos que requieren un enfoque pragmático y adaptativo. La clave del éxito reside en una planificación cuidadosa, una comunicación efectiva y un equipo multidisciplinario capaz de adaptarse a las diferentes fases del proyecto. La elección de este modelo, o cualquier otro híbrido, debe basarse en un análisis exhaustivo de las necesidades y características específicas de cada proyecto.
+
+\section*{Referencias}
+
+\begin{itemize}
+    \item Boehm, B. (1988). A spiral model of software development and enhancement. \textit{Computer}, \textit{21}(5), 61-72.
+    \item Cockburn, A. (2001). \textit{Agile software development}. Addison-Wesley Professional.
+    \item Schwaber, K., & Sutherland, J. (2020). \textit{The Scrum Guide}. Scrum.org.
+    \item Sommerville, I. (2016). \textit{Software engineering} (10th ed.). Pearson Education.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,130 @@
+
+\documentclass[12pt, spanish]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+\begin{document}
+
+\begin{tabular}{ll}
+Nombre: & Gabriel Méndez \\
+C.I.: & V-30.464.232 \\
+Materia: & Análisis de Sistemas \\
+Sección: & DCM0402 \\
+Universidad: & UniversidadAlejandroDeHumboldt \\
+Carrera: & IngenieriaInformatica \\
+Evaluación: & Evaluación N\textdegree1 – Corte 1 \\
+Fecha: & 11/02/2025
+\end{tabular}
+
+\vspace{2cm}
+\begin{center}
+\Large \textbf{{Materia: Análisis de Sistemas}}
+\end{center}
+
+\section*{Introducción}
+
+El desarrollo de software ha evolucionado significativamente, transitando desde enfoques tradicionales, como el modelo en Cascada, hasta metodologías ágiles como Scrum y Extreme Programming (XP). Cada enfoque posee fortalezas y debilidades inherentes. Este documento presenta un modelo híbrido que busca combinar lo mejor de ambos mundos: la predictibilidad y planificación detallada de las metodologías tradicionales con la flexibilidad y adaptabilidad de las metodologías ágiles. Este modelo híbrido, denominado “Agile-Cascade Integrado” (ACI), se propone como una solución adaptable a proyectos de software con requisitos complejos y cambiantes.
+
+\section*{Desarrollo: Modelo Agile-Cascade Integrado (ACI)}
+
+El modelo ACI se basa en la siguiente estructura:
+
+\subsection*{Fase de Iniciación (Tradicional)}
+
+Esta fase inicial sigue un enfoque tradicional tipo Cascada. Su objetivo es establecer un alcance claro, identificar los requisitos fundamentales y planificar a alto nivel. Las actividades principales incluyen:
+
+\begin{itemize}
+    \item \textbf{Análisis de Viabilidad:} Evaluación del proyecto en términos de factibilidad técnica, económica y operativa.
+    \item \textbf{Recopilación de Requisitos Iniciales:}  Identificación de los requisitos de alto nivel a través de entrevistas, talleres y análisis de documentos.  Se utiliza un documento de requisitos inicial (DRI) para capturar esta información.
+    \item \textbf{Diseño de Arquitectura Inicial:} Definición de la arquitectura general del sistema, incluyendo componentes principales, interfaces y tecnologías a utilizar.
+    \item \textbf{Planificación del Proyecto a Alto Nivel:}  Elaboración de un plan de proyecto general que define hitos principales, recursos necesarios y plazos estimados.  Se crean diagramas de Gantt preliminares.
+\end{itemize}
+
+Esta fase produce un conjunto de documentos que sirven como base para las siguientes fases ágiles.  Es importante destacar que esta fase se realiza de forma iterativa y se refina a medida que se avanza en el proyecto.
+
+\subsection*{Fases Ágiles (Iteraciones/Sprints)}
+
+Una vez completada la fase de iniciación, el proyecto se divide en iteraciones o sprints, siguiendo principios de Scrum.  Cada sprint se centra en la implementación de un subconjunto de requisitos definidos en el DRI y refinados en la fase de iniciación.
+
+\begin{itemize}
+    \item \textbf{Planificación del Sprint (Sprint Planning):}  El equipo selecciona las tareas del backlog (derivado del DRI) que se implementarán en el sprint. Se definen objetivos claros y medibles para el sprint.
+    \item \textbf{Desarrollo (Development):} El equipo trabaja en la implementación de las tareas seleccionadas, siguiendo prácticas de XP como programación en parejas, revisiones de código y pruebas unitarias.
+    \item \textbf{Revisión del Sprint (Sprint Review):}  Al finalizar el sprint, el equipo presenta los resultados a los stakeholders para obtener feedback. Se evalúa si se cumplieron los objetivos del sprint.
+    \item \textbf{Retrospectiva del Sprint (Sprint Retrospective):} El equipo reflexiona sobre el proceso del sprint e identifica áreas de mejora.
+\end{itemize}
+
+Cada sprint produce un incremento del producto funcional y probado.  El feedback de los stakeholders se utiliza para refinar los requisitos y priorizar las tareas para los siguientes sprints.
+
+\subsection*{Fase de Integración y Pruebas (Tradicional)}
+
+Después de un número determinado de sprints (o cuando se considere que se ha alcanzado un nivel de funcionalidad suficiente), se lleva a cabo una fase de integración y pruebas más exhaustiva.  Esta fase sigue un enfoque tradicional tipo V-Model.
+
+\begin{itemize}
+    \item \textbf{Integración Continua:}  Se integran los diferentes componentes desarrollados durante los sprints.  Se utilizan herramientas de integración continua para automatizar el proceso y detectar errores tempranamente.
+    \item \textbf{Pruebas del Sistema:}  Se realizan pruebas funcionales, de rendimiento, de seguridad y de usabilidad para verificar que el sistema cumple con los requisitos especificados.
+    \item \textbf{Pruebas de Aceptación del Usuario (UAT):}  Los usuarios finales prueban el sistema en un entorno real para verificar que satisface sus necesidades y expectativas.
+\end{itemize}
+
+Esta fase produce un sistema integrado y probado, listo para ser desplegado en producción.
+
+\subsection*{Fase de Despliegue y Mantenimiento (Tradicional)}
+
+La última fase del modelo ACI se centra en el despliegue del sistema en producción y su posterior mantenimiento.  Esta fase sigue un enfoque tradicional tipo Cascada.
+
+\begin{itemize}
+    \item \textbf{Despliegue:} Se despliega el sistema en el entorno de producción, siguiendo un plan de despliegue cuidadosamente elaborado.
+    \item \textbf{Mantenimiento Correctivo:} Se corrigen los errores y defectos que se encuentren después del despliegue.
+    \item \textbf{Mantenimiento Evolutivo:} Se realizan mejoras y modificaciones al sistema para adaptarlo a los cambios en las necesidades del usuario y el entorno.
+\end{itemize}
+
+\section*{Ventajas y Desafíos del Modelo ACI}
+
+\subsection*{Ventajas}
+
+\begin{itemize}
+    \item \textbf{Mejor Gestión del Riesgo:} La fase de iniciación permite identificar y mitigar riesgos tempranamente.
+    \item \textbf{Mayor Flexibilidad y Adaptabilidad:} Las fases ágiles permiten adaptarse a los cambios en los requisitos a lo largo del proyecto.
+    \item \textbf{Entrega Continua de Valor:} Cada sprint produce un incremento del producto funcional y probado.
+    \item \textbf{Mayor Transparencia y Comunicación:} La participación de los stakeholders en las revisiones de sprint permite mantenerlos informados sobre el progreso del proyecto y obtener su feedback.
+    \item \textbf{Mayor Calidad del Software:} La combinación de pruebas unitarias, revisiones de código y pruebas de sistema contribuye a mejorar la calidad del software.
+    \item \textbf{Adecuado para Proyectos Complejos:} El modelo ACI es especialmente adecuado para proyectos complejos con requisitos cambiantes y un alto grado de incertidumbre.
+\end{itemize}
+
+\subsection*{Desafíos}
+
+\begin{itemize}
+    \item \textbf{Complejidad de la Gestión:} La gestión de un proyecto híbrido requiere un mayor nivel de coordinación y comunicación entre los diferentes equipos y stakeholders.
+    \item \textbf{Curva de Aprendizaje:} Los miembros del equipo deben estar familiarizados con los principios y prácticas tanto de las metodologías ágiles como de las tradicionales.
+    \item \textbf{Resistencia al Cambio:}  Algunos miembros del equipo pueden resistirse a adoptar un enfoque híbrido si están acostumbrados a trabajar con un solo tipo de metodología.
+    \item \textbf{Definición Clara de Roles y Responsabilidades:} Es fundamental definir claramente los roles y responsabilidades de cada miembro del equipo para evitar confusiones y conflictos.
+    \item \textbf{Medición del Progreso:}  La medición del progreso en un proyecto híbrido puede ser más difícil que en un proyecto que utiliza una sola metodología.
+    \item \textbf{Necesidad de una Fase de Iniciación bien definida:**  Una fase de iniciación mal planificada puede generar problemas en las fases ágiles posteriores.
+\end{itemize}
+
+\section*{Ejemplo Práctico}
+
+Consideremos el desarrollo de una plataforma de comercio electrónico. La \textbf{fase de iniciaci\'on} definir\'ia los requisitos iniciales como: autenticaci\'on de usuarios, cat\'alogo de productos, carrito de compras, y procesamiento de pagos. La arquitectura inicial podr\'ia definir el uso de un microservicio para la gesti\'on de pagos.
+
+Las \textbf{fases ágiles} se enfocarían en desarrollar características específicas en cada sprint. Por ejemplo, el sprint 1 podría enfocarse en la autenticación de usuarios, el sprint 2 en el catálogo de productos, y así sucesivamente. En cada sprint, el equipo aplicaría prácticas de XP como programación en pares para asegurar la calidad del código.
+
+La \textbf{fase de integración y pruebas} se encargaría de integrar todos los microservicios y validar el correcto funcionamiento de la plataforma. Se realizarían pruebas de rendimiento para asegurar que la plataforma puede manejar un gran número de usuarios concurrentes.
+
+Finalmente, la \textbf{fase de despliegue y mantenimiento} se encargaría de poner la plataforma en producción y corregir cualquier error que se encuentre después del lanzamiento.
+
+\section*{Conclusión}
+
+El modelo Agile-Cascade Integrado (ACI) ofrece una alternativa viable para el desarrollo de software en entornos complejos y cambiantes. Si bien presenta desafíos en términos de gestión y coordinación, sus ventajas en cuanto a flexibilidad, gestión del riesgo y entrega continua de valor lo convierten en una opción atractiva. La clave del éxito reside en una planificación cuidadosa, una comunicación efectiva y una comprensión profunda de las fortalezas y debilidades de cada enfoque. La correcta adaptación del modelo a las necesidades específicas del proyecto es crucial para obtener los mejores resultados.
+
+\section*{Referencias Bibliográficas}
+
+\begin{itemize}
+    \item  Schwaber, K., & Sutherland, J. (2020). *The Scrum Guide*. Scrum.org.
+    \item  Beck, K. (2000). *Extreme Programming Explained: Embrace Change*. Addison-Wesley Professional.
+    \item  Royce, W. W. (1970). Managing the Development of Large Software Systems: Concepts and Techniques. *Proceedings of IEEE WESCON*, 1-9.
+    \item  Sommerville, I. (2016). *Software Engineering* (10th ed.). Pearson Education.
+\end{itemize}
+
+\end{document}

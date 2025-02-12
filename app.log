@@ -1,0 +1,20 @@
+2025-02-11 23:57:27,657 [INFO] Generando contenido con API...
+2025-02-11 23:57:46,898 [INFO] Contenido generado exitosamente con Gemini. Longitud: 9583 caracteres
+2025-02-11 23:57:46,899 [ERROR] Error en la API de Gemini: 'article'
+2025-02-11 23:57:46,899 [ERROR] Error al generar tarea: Error al comunicarse con Google Gemini: 'article'
+2025-02-11 23:57:46,899 [DEBUG] Error al generar tarea: Error al comunicarse con Google Gemini: 'article'
+Traceback (most recent call last):
+  File "/home/hakka/Documentos/Automatizar tareas/proyecto_tareas/api/gemini.py", line 54, in generate_content_gemini
+    latex_content = LATEX_TEMPLATE.format(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'article'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hakka/Documentos/Automatizar tareas/proyecto_tareas/gui/handlers.py", line 29, in handle_generate_event
+    full_content = generate_content_gemini(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hakka/Documentos/Automatizar tareas/proyecto_tareas/api/gemini.py", line 71, in generate_content_gemini
+    raise Exception(f"Error al comunicarse con Google Gemini: {str(e)}")
+Exception: Error al comunicarse con Google Gemini: 'article'

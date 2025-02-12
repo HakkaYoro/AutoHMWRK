@@ -1,3 +1,4 @@
 .env
 generated_docs/
 venv/
+temp_images/

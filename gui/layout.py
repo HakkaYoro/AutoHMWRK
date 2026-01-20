@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 from config.styles import theme, font_settings
 
 sg.theme(theme)
@@ -30,8 +30,10 @@ def create_main_window():
             [sg.Text('Corte:', font=font_settings),
              sg.Input(key='-CORTE-', size=(3,1))]
         ], font=font_settings)],
-        [sg.Text('API:', font=font_settings),
-         sg.Combo(['OpenRouter', 'Google Gemini'], key='-API-', default_value='OpenRouter', readonly=True)],
+        
+        [sg.Text('Proveedor API:', font=font_settings),
+         sg.Combo(['OpenRouter', 'Google Gemini', 'OpenAI / Custom'], key='-API-PROVIDER-', default_value='OpenRouter', readonly=True)],
+        
         [sg.Checkbox('Desea añadir imágenes?', key='-ADD_IMAGES-', default=True, font=font_settings)],
         [sg.Button('Generar', font=font_settings), sg.Button('Salir', font=font_settings)]
     ]

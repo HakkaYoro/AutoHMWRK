@@ -1,7 +1,7 @@
 import logging
 import os
 from dotenv import load_dotenv
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 from api.openrouter import generate_content
 from utils.logger import setup_logger
 from utils.validators import validate_ci, validate_section

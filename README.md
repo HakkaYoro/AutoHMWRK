@@ -2,116 +2,79 @@
 
 ## Description
 
-This application automates task generation using a graphical user interface (GUI) built with PySimpleGUI. It leverages external APIs, such as OpenRouter, to generate content based on user-defined parameters. The generated content can then be formatted using LaTeX.
+This application automates task generation using a graphical user interface (GUI) built with **FreeSimpleGUI**. It leverages external APIs (like OpenRouter, Google Gemini, or any OpenAI-compatible provider like Z.ai or DeepSeek) to generate extensive academic content. The content is then formatted into a professional LaTeX document and compiled to PDF automatically.
 
-Currently, the task generation is programmed for the "Alejandro de Humboldt" University. Future versions will allow for custom university names, sections, and logos.
-
-If you want to modify these things, review `openrouter.py` and `gemini.py` respectively. You can also change the logo located in the `logos` folder.
+**Key Features:**
+- **Modern GUI**: Simplified interface for quick task generation.
+- **Flexible API Support**: Connect to any OpenAI-compatible API (Z.ai, DeepSeek, local LLMs) or use standard OpenRouter / Gemini.
+- **DeepSeek Reasoning Support**: Optional filter to remove `<think>` tags from reasoning models.
+- **Automatic Image Injection**: Scrapes relevant images based on your topic and embeds them into the final PDF.
+- **Smart Launcher**: `run.sh` handles virtual environments and dependencies automatically.
 
 ## Installation (Linux)
 
-This application requires pdflatex to generate PDF documents. These instructions are for Linux.
+This application is optimized for Arch Linux but should work on any distro with Python 3.11+ and TeX Live.
 
-1.  Clone the repository:
-
+1.  **Clone the repository**:
     ```bash
     git clone https://github.com/HakkaYoro/AutoHMWRK.git
+    cd AutoHMWRK
     ```
-2.  Install the required dependencies:
+
+2.  **System Requirements**:
+    Ensure you have `python3.11`, `pip`, and `texlive` installed. For Spanish documents, you specifically need `texlive-langspanish`.
+    
+    *Arch Linux:*
+    ```bash
+    sudo pacman -S python311 texlive-core texlive-latexextra texlive-langspanish
+    ```
+
+3.  **Configuration**:
+    Create a `.env` file in the root directory (use `.env.example` as a template).
 
     ```bash
-    sudo apt-get update
-    sudo apt-get install -y texlive-latex-base
+    cp .env.example .env
+    nano .env
     ```
+    
+    **Example `.env` content:**
+    ```ini
+    # --- Option A: Custom / OpenAI Compatible (Recommended for Z.ai, DeepSeek, etc) ---
+    OPENAI_API_KEY=sk-your-key
+    OPENAI_BASE_URL=https://api.yourprovider.com/v1
+    OPENAI_MODEL=model-name
+    # Set to true if using reasoning models like deepseek-r1 to hide <think> blocks
+    REASONING_FILTER=false 
 
-    ```bash
-    pip install -r requirements.txt
+    # --- Option B: OpenRouter ---
+    OPENROUTER_API_KEY=sk-or-your-key
+    OPENROUTER_MODEL=openai/gpt-3.5-turbo
     ```
-3.  Set up the environment variables:
-
-    *   Create a `.env` file in the root directory.
-    *   Add the necessary API keys and other configuration parameters to the `.env` file.  Example:
-
-        ```
-        OPENROUTER_API_KEY=your_openrouter_api_key
-        OPENROUTER_MODEL=your/llm
-        GOOGLE_GEMINI_API_KEY=your_google_gemini_api_key
-        GOOGLE_GEMINI_MODEL=llm-name
-        ```
-
-## Installation (Windows)
-
-This application requires Python 3 and pdflatex to generate PDF documents. These instructions are for Windows. This application has not been tested on Windows yet.
-
-1.  Install Python 3:
-
-    *   Download the Python 3 installer from [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/).
-    *   Run the installer and follow the instructions. Make sure to check "Add Python to PATH" during installation.
-2.  Install Git:
-
-    *   Download the Git installer from [https://git-scm.com/download/windows](https://git-scm.com/download/windows).
-    *   Run the installer and follow the instructions. Make sure to check "Add Git to PATH" during installation.
-3.  Clone the repository:
-
-    ```bash
-    git clone https://github.com/HakkaYoro/AutoHMWRK.git
-    ```
-4.  Install the required dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-5.  Set up the environment variables:
-
-    *   Create a `.env` file in the root directory.
-    *   Add the necessary API keys and other configuration parameters to the `.env` file.  Example:
-
-        ```
-        OPENROUTER_API_KEY=your_openrouter_api_key
-        OPENROUTER_MODEL=your/llm
-        GOOGLE_GEMINI_API_KEY=your_google_gemini_api_key
-        GOOGLE_GEMINI_MODEL=llm-name
-        ```
-6.  Install MiKTeX:
-
-    *   Download the MiKTeX installer from [https://miktex.org/download](https://miktex.org/download).
-    *   Run the installer and follow the instructions.
-7.  Add MiKTeX to the PATH:
-
-    *   Open the Control Panel.
-    *   Go to System and Security > System > Advanced system settings.
-    *   Click the "Environment Variables" button.
-    *   In the "System variables" section, find the "Path" variable and click "Edit".
-    *   Add the path to the MiKTeX bin directory to the end of the "Variable value" field. For example: `C:\Program Files\MiKTeX 2.9\miktex\bin\x64`.
-    *   Click "OK" to save the changes.
 
 ## Usage
 
-1.  Run the application:
+1.  **Run the Launcher**:
+    Simply execute the script. It will set up the virtual environment and install dependencies automatically.
+    
+    ```bash
+    ./run.sh
+    ```
 
-    *   For Linux:
+2.  **Generate**:
+    - Fill in the student data and topic.
+    - Select your **API Provider** from the dropdown (matches your `.env` config).
+    - Check "Desea añadir imágenes?" to automatically search and add images.
+    - Click **Generar**.
 
-        ```bash
-        ./run.sh
-        ```
-    *   For Windows:
+3.  **Output**:
+    The PDF will be generated in the `generated_docs` folder, automatically renamed with the student's details.
 
-        ```bat
-        run.bat
-        ```
-2.  The GUI will appear, allowing you to input the task parameters.
-3.  Click the "Generar" button to generate the task.
-4.  The generated task will be displayed in the GUI and saved to the `generated_docs` directory.
+## Troubleshooting
 
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1.  Fork the repository.
-2.  Create a new branch for your feature or bug fix.
-3.  Make your changes and commit them with descriptive messages.
-4.  Submit a pull request.
+- **LaTeX Error (babel):** If you see `! Package babel Error: Unknown option 'spanish'`, install `texlive-langspanish`.
+- **Images not showing:** Ensure you have internet access. The script uses DuckDuckGo/Google to find images.
+- **API Errors:** Check `AutoHMWRK.log` for details. Ensure your Base URL is correct in `.env`.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License.
